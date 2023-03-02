@@ -37,7 +37,7 @@ const SideBar = (props) => {
                             whiteSpace: 'nowrap',
                         }}
                     >
-                        Hoi Dan IT
+                        Quiz
                     </div>
                 </SidebarHeader>
 
