@@ -11,6 +11,9 @@ import {
 
 import { FaTachometerAlt, FaGem, FaList, FaGithub, FaRegLaughWink, FaHeart } from 'react-icons/fa';
 import sidebarBg from '../../assets/bg2.jpg';
+import { BiHeartCircle } from "react-icons/bi";
+import { MdDashboard } from "react-icons/md";
+import { Link } from 'react-router-dom';
 
 
 const SideBar = (props) => {
@@ -37,28 +40,32 @@ const SideBar = (props) => {
                             whiteSpace: 'nowrap',
                         }}
                     >
-                        Quiz
+                        <BiHeartCircle size={'3em'} color={"#e91e63"} />
+                       <span>Quizizz HUFLIT</span>
                     </div>
                 </SidebarHeader>
 
                 <SidebarContent>
                     <Menu iconShape="circle">
                         <MenuItem
-                            icon={<FaTachometerAlt />}
-                            suffix={<span className="badge red">New</span>}
+                            icon={<MdDashboard />}
+                           
                         >
-                            dashboard
-                        </MenuItem>
-                        <MenuItem icon={<FaGem />}> components </MenuItem>
+                            Dashboard
+                            <Link to="/admins" />
+                        </MenuItem>       
                     </Menu>
                     <Menu iconShape="circle">
                         <SubMenu
-                            suffix={<span className="badge yellow">3</span>}
-                            icon={<FaRegLaughWink />}
+                             icon={<FaGem />}
+                             title="Features"
                         >
-                            <MenuItem> 1</MenuItem>
-                            <MenuItem> 2</MenuItem>
-                            <MenuItem> 3</MenuItem>
+                            <MenuItem> 
+                            Quản lý Users
+                            <Link to="/admins/manage-users" />
+                            </MenuItem>
+                            <MenuItem> Quản lý bài Quizizz</MenuItem>
+                            <MenuItem> Quản lý Câu Hỏi</MenuItem>
                         </SubMenu>
 
                     </Menu>
@@ -79,7 +86,7 @@ const SideBar = (props) => {
                         >
                             <FaGithub />
                             <span style={{ whiteSpace: 'nowrap', textOverflow: 'ellipsis', overflow: 'hidden' }}>
-                                viewSource
+                               Nhóm 30
                             </span>
                         </a>
                     </div>
